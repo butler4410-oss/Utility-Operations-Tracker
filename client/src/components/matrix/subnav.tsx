@@ -9,6 +9,8 @@ const navItems = [
   { label: "QA Proofs", path: "/qa-proofs" },
   { label: "Confirmation Holds", path: "/confirmation-holds" },
   { label: "Mail Compliance", path: "/mail-compliance" },
+  { label: "Onboarding", path: "/onboarding" },
+  { label: "Digital Presentment", path: "/digital-presentment" },
   { label: "Admin", path: "/admin" },
 ];
 

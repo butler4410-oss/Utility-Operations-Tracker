@@ -472,6 +472,51 @@ export async function registerRoutes(
     }
   });
 
+  // Cost Comparison (eBill vs Print)
+  app.get("/api/cost-comparison", requireAuth, async (req, res) => {
+    try {
+      const clients = await storage.getClients();
+      const printJobs = await storage.getPrintJobs();
+      const eBillSends = await storage.getEBillSends();
+
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+      const result = clients.map(client => {
+        const clientPrintJobs = printJobs.filter(j =>
+          j.clientId === client.id && new Date(j.date) >= thirtyDaysAgo
+        );
+        const clientEBillSends = eBillSends.filter(e =>
+          e.clientId === client.id && new Date(e.sendDate) >= thirtyDaysAgo
+        );
+
+        const printPieces = clientPrintJobs.reduce((sum, j) => sum + (j.pieces || 0), 0);
+        const printCost = clientPrintJobs.reduce((sum, j) => sum + (typeof j.cost === 'string' ? parseFloat(j.cost) : (j.cost || 0)), 0);
+        const eBillCount = clientEBillSends.length;
+        const estEBillCost = eBillCount * 0.15;
+        const estPrintEquivCost = eBillCount * 0.85;
+        const savings = estPrintEquivCost - estEBillCost;
+        const savingsPercent = estPrintEquivCost > 0 ? (savings / estPrintEquivCost) * 100 : 0;
+
+        return {
+          clientId: client.id,
+          clientName: client.name,
+          printPieces,
+          printCost: Math.round(printCost * 100) / 100,
+          eBillSends: eBillCount,
+          estEBillCost: Math.round(estEBillCost * 100) / 100,
+          estPrintEquivCost: Math.round(estPrintEquivCost * 100) / 100,
+          savings: Math.round(savings * 100) / 100,
+          savingsPercent: Math.round(savingsPercent * 10) / 10,
+        };
+      });
+
+      res.json(result);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
   // Admin
   app.get("/api/admin/status", requireRole('Admin'), async (req, res) => {
     const status = await storage.getDataStatus();

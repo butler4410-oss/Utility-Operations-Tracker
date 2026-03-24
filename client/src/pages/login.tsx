@@ -34,8 +34,10 @@ export default function Login() {
               <ShieldCheck className="h-6 w-6" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold tracking-tight text-brand-navy">MATRIX Operations</CardTitle>
-          <CardDescription>Enter your credentials to access the portal</CardDescription>
+          <CardTitle className="text-2xl font-bold tracking-tight text-brand-navy">MATRIX Imaging</CardTitle>
+          <p className="text-lg font-semibold text-brand-navy/80">Operations Portal</p>
+          <p className="text-xs text-muted-foreground">Transactional Mail &amp; E-Solutions</p>
+          <CardDescription className="mt-2">Enter your credentials to access the portal</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">

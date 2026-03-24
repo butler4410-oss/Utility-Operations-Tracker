@@ -18,6 +18,8 @@ import {
   Mail,
   Upload as UploadIcon,
   UserCog,
+  UserPlus,
+  Leaf,
 } from "lucide-react";
 
 interface MenuGroup {
@@ -56,6 +58,7 @@ const menuGroups: MenuGroup[] = [
       { label: "Client Services", path: "/client-services", icon: UserCog },
       { label: "Bill Messages", path: "/bill-messages", icon: MessageSquare },
       { label: "eBill", path: "/ebill", icon: Mail },
+      { label: "Digital Presentment", path: "/digital-presentment", icon: Leaf },
     ],
   },
   {
@@ -63,6 +66,7 @@ const menuGroups: MenuGroup[] = [
     items: [
       { label: "Print Volume", path: "/print-volume", icon: Truck },
       { label: "Clients", path: "/clients", icon: Users },
+      { label: "Onboarding", path: "/onboarding", icon: UserPlus },
       { label: "Admin", path: "/admin", icon: Settings },
     ],
   },

@@ -25,6 +25,8 @@ import BillMessages from "@/pages/bill-messages";
 import EBill from "@/pages/ebill";
 import Upload from "@/pages/upload";
 import ClientServices from "@/pages/client-services";
+import Onboarding from "@/pages/onboarding";
+import DigitalPresentment from "@/pages/digital-presentment";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -51,6 +53,8 @@ function Router() {
       <Route path="/surveys" component={Surveys} />
       <Route path="/call-center" component={CallCenter} />
       <Route path="/reports" component={Reports} />
+      <Route path="/onboarding" component={Onboarding} />
+      <Route path="/digital-presentment" component={DigitalPresentment} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
