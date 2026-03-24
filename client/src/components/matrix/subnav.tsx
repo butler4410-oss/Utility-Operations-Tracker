@@ -18,7 +18,7 @@ export function MatrixSubNav() {
   const [location] = useLocation();
 
   return (
-    <div className="bg-[#2c5282] border-b border-gray-600 overflow-x-auto">
+    <div className="bg-[#335D8E] border-b border-[#002D72] overflow-x-auto">
       <nav className="flex items-center h-10 px-4 gap-1 min-w-max">
         {navItems.map((item) => {
           const isActive = location === item.path;
@@ -28,8 +28,8 @@ export function MatrixSubNav() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-t transition-colors whitespace-nowrap",
                   isActive
-                    ? "bg-white text-[#1e3a5f] shadow-sm"
-                    : "text-blue-100 hover:bg-white/10 hover:text-white"
+                    ? "bg-white text-[#002D72] shadow-sm font-semibold"
+                    : "text-white/80 hover:bg-white/10 hover:text-white"
                 )}
                 data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
               >

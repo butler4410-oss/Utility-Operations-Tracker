@@ -11,9 +11,9 @@ function MatrixKpiTile({ title, value, subtext, trend, icon: Icon }: { title: st
     <div className="bg-white border border-gray-200 rounded p-3 shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">{title}</span>
-        <Icon className="h-4 w-4 text-[#1e3a5f]" />
+        <Icon className="h-4 w-4 text-[#002D72]" />
       </div>
-      <div className="text-2xl font-bold text-[#1e3a5f] mb-1">{value}</div>
+      <div className="text-2xl font-bold text-[#002D72] mb-1">{value}</div>
       <div className="flex items-center text-xs text-gray-500">
         {trend === 'up' && <ArrowUpRight className="h-3 w-3 text-brand-green mr-1" />}
         {trend === 'down' && <ArrowDownRight className="h-3 w-3 text-red-500 mr-1" />}
@@ -91,8 +91,8 @@ export default function Dashboard() {
     <MatrixLayout>
       <div className="p-6 space-y-6">
         <div>
-          <h1 className="text-2xl font-bold text-[#1e3a5f] mb-1">Dashboard</h1>
-          <p className="text-sm text-gray-600">Operations summary and key metrics</p>
+          <h1 className="text-2xl font-bold mb-1"><span className="text-[#00A3E0]">Operations</span> <span className="text-[#002D72]">Dashboard</span></h1>
+          <p className="text-sm text-[#231F20]/60">Real-time summary of key performance metrics</p>
         </div>
 
         <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">

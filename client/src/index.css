@@ -9,9 +9,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Brand Colors */
-  --color-brand-navy: hsl(216 100% 22%); /* #002D72 */
-  --color-brand-green: hsl(160 84% 39%); /* #10b981 */
+  /* Matrix Imaging Solutions Brand Colors */
+  --color-brand-navy: #002D72;    /* PMS 288 C - Dark Navy */
+  --color-brand-blue: #00A3E0;    /* PMS 299 C - Light Blue */
+  --color-brand-gold: #FFC72C;    /* PMS 123 C - Yellow/Gold */
+  --color-brand-black: #231F20;   /* Pantone Black C */
+  --color-brand-green: #10b981;   /* Utility accent (kept for charts) */
   
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));

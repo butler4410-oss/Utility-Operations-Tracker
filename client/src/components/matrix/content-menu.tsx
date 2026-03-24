@@ -99,7 +99,7 @@ export function ContentMenu() {
                       className={cn(
                         "flex items-center gap-2 px-3 py-2 text-sm rounded transition-colors",
                         isActive
-                          ? "bg-[#1e3a5f] text-white font-medium"
+                          ? "bg-[#002D72] text-white font-medium"
                           : "text-gray-700 hover:bg-gray-200"
                       )}
                       data-testid={`menu-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
